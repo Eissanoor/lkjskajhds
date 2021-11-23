@@ -1,0 +1,126 @@
+<!-- include header -->
+
+
+
+<!-- include header -->
+
+
+<!-- include footer -->
+
+
+
+<!-- include footer -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>CRUD FROM API</title>
+
+    <link href="index.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+    <nav class="navbar navbar-dark bg-mynav">
+        <div class="container-fluid">
+            <a class="m" href="#">Use Managment System</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="d-flex bd-highlight mb-3">
+            <div class="me-auto p-2 bd-highlight">
+                <h2>Users</div>
+            <div class="p-2 bd-highlight">
+                <button type="button" class="btn btn-secondary"> <a id="c" href="./add"> Create</a></button>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+
+            <table class="table">
+                <thead>
+                    <tr class="ha">
+                        <th scope="col">No</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">email</th>
+                        <th scope="col">phone</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="mytable">
+
+                    <% for(var i=0; i<add.length; i++){%>
+                        <tr id="h">
+                            <th scope="col">
+                                <%= i%>
+                            </th>
+
+                            <th scope="col">
+                                <%=add[i].username%>
+                            </th>
+                            <th scope="col">
+                                <%=add[i].email%>
+                            </th>
+                            <th scope="col">
+                                <%=add[i].phone%>
+                            </th>
+                            <th scope="col">
+                                <%=add[i].gender%>
+                            </th>
+                            <th scope="col">active <a href="/del/<%= add[i]._id %>">del</a>/<a href="/add/<%= add[i]._id %> ">Up</a> </th>
+                        </tr>
+                        <%}%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <style>
+        .i {
+            cursor: pointer;
+        }
+        
+        .m {
+            margin: 0 auto;
+            text-decoration: none;
+            margin-top: 30px;
+            font-size: 30px;
+            color: blueviolet;
+        }
+        
+        #h:hover {
+            background-color: rgb(216, 189, 241);
+        }
+        
+        #c {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .ha {
+            color: blueviolet;
+            font-weight: bold;
+        }
+    </style>
+
+</body>
+
+</html>
