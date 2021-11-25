@@ -93,9 +93,9 @@ app.post('/add/:id', (req, res) => {
 app.get('/del/:id', (req, res) => {
 
 
-    Addnew.findOneAndDelete(req.params.id, function() {
+    Addnew.findOneAndDelete(req.params.id, function(add) {
 
-        res.status(201).send("Deleted Your data")
+        res.status(201).send("Deleted Your data", { add: add })
 
     })
 })
