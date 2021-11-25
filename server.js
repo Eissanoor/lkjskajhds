@@ -32,7 +32,7 @@ app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
 
     Addnew.find(function(err, add) {
 
